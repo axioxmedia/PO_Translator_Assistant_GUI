@@ -26,8 +26,6 @@ class POTranslatorGUI:
         self.create_widgets()
 
     def create_widgets(self):
-        # ...（界面部分和之前一样，省略以节省空间）
-        # 你可以直接把之前界面的代码保留，只替换 apply_translations 和 parse_po_file 部分
 
         title_label = tk.Label(self.root, text="凯普勒186F PO 翻译工具 v1.2（已彻底修复错位问题）", 
                                font=("Microsoft YaHei", 15, "bold"), pady=8)
@@ -93,8 +91,8 @@ class POTranslatorGUI:
             self.output_po_path.set(path)
 
     def extract_untranslated(self):
-        # 保持你原来的提取逻辑即可（没问题）
-        pass   # 这里省略，保持你当前 extract_untranslated 不变
+
+        pass   
 
     def apply_translations_threaded(self):
         t = threading.Thread(target=self.apply_translations)
@@ -182,7 +180,7 @@ class POTranslatorGUI:
         return content
 
     def show_stats(self):
-        # 保持原有逻辑
+        
         pass
 
 
