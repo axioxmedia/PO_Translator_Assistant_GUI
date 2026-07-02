@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Sngine PO 翻译工具 v1.2（最终稳定版）
+凯普勒186F PO 翻译工具 v1.2（最终稳定版）
 核心改进：Apply 时优先用 msgid 匹配，彻底解决错位问题
 """
 
@@ -16,7 +16,7 @@ from pathlib import Path
 class POTranslatorGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("Sngine PO 翻译工具 v1.2（稳定版）")
+        self.root.title("凯普勒186F PO 翻译工具 v1.2（稳定版）")
         self.root.geometry("720x580")
 
         self.input_po_path = tk.StringVar()
@@ -29,7 +29,7 @@ class POTranslatorGUI:
         # ...（界面部分和之前一样，省略以节省空间）
         # 你可以直接把之前界面的代码保留，只替换 apply_translations 和 parse_po_file 部分
 
-        title_label = tk.Label(self.root, text="Sngine PO 翻译工具 v1.2（已彻底修复错位问题）", 
+        title_label = tk.Label(self.root, text="凯普勒186F PO 翻译工具 v1.2（已彻底修复错位问题）", 
                                font=("Microsoft YaHei", 15, "bold"), pady=8)
         title_label.pack()
 
