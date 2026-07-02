@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-凯普勒186F PO 翻译工具 v1.2（最终稳定版）
-核心改进：Apply 时优先用 msgid 匹配，彻底解决错位问题
-"""
 
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
@@ -16,7 +12,7 @@ from pathlib import Path
 class POTranslatorGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("凯普勒186F PO 翻译工具 v1.2（稳定版）")
+        self.root.title("凯普勒186F PO 翻译工具 v1.2")
         self.root.geometry("720x580")
 
         self.input_po_path = tk.StringVar()
@@ -27,7 +23,7 @@ class POTranslatorGUI:
 
     def create_widgets(self):
 
-        title_label = tk.Label(self.root, text="凯普勒186F PO 翻译工具 v1.2（已彻底修复错位问题）", 
+        title_label = tk.Label(self.root, text="凯普勒186F PO 翻译工具 v1.2", 
                                font=("Microsoft YaHei", 15, "bold"), pady=8)
         title_label.pack()
 
