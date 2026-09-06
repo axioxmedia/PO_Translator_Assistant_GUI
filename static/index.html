@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/brand/logo.png" type="image/png" />
+  <title>Kepler 186F PO Translator Desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body class="aio-app axiox-shell">
+  <div class="bg-grid"></div>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <img class="mark-img" src="/brand/logo.png" alt="Axiox Media" width="44" height="44" />
+        <div>
+          <h1 data-i18n="appTitle">凯普勒 186F PO 翻译助手</h1>
+          <p data-i18n="appSubtitle">提取未翻译条目到 JSON，再按 msgid 安全写回 .po</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div class="lang-switch" id="uiLangSwitch">
+          <button type="button" data-ui-lang="zh">中文</button>
+          <button type="button" data-ui-lang="en">EN</button>
+        </div>
+        <div class="chip" id="platformChip">PO</div>
+      </div>
+    </header>
+
+    <section class="stage">
+      <article class="card panel panel-form">
+        <div class="panel-scroll">
+        <div class="kicker">PO Desk</div>
+        <h2 data-i18n="formTitle">文件与操作</h2>
+
+        <label for="poPath" data-i18n="poLabel">原始 PO 文件</label>
+        <div class="split path-split">
+          <div class="field">
+            <span class="icon">⌘</span>
+            <input id="poPath" type="text" data-i18n-placeholder="poPlaceholder" placeholder="D:\loc\Game.po" autocomplete="off" />
+          </div>
+          <button class="soft" id="pickPo" type="button" data-i18n="browse">浏览</button>
+        </div>
+
+        <label for="jsonPath" data-i18n="jsonLabel">翻译结果 JSON</label>
+        <div class="split path-split">
+          <div class="field">
+            <span class="icon">{}</span>
+            <input id="jsonPath" type="text" data-i18n-placeholder="jsonPlaceholder" placeholder="D:\loc\untranslated.json" autocomplete="off" />
+          </div>
+          <button class="soft" id="pickJson" type="button" data-i18n="browse">浏览</button>
+        </div>
+
+        <label for="outPath" data-i18n="outLabel">输出中文 PO 文件</label>
+        <div class="split path-split">
+          <div class="field">
+            <span class="icon">#</span>
+            <input id="outPath" type="text" data-i18n-placeholder="outPlaceholder" placeholder="D:\loc\Game.zh_CN.po" autocomplete="off" />
+          </div>
+          <button class="soft" id="pickOut" type="button" data-i18n="saveAs">保存位置</button>
+        </div>
+
+        <p class="hint" id="pathHint"></p>
+        </div>
+
+        <div class="action-grid">
+          <button class="primary tight" id="extractBtn" type="button" data-i18n="extractBtn">① 提取未翻译内容</button>
+          <button class="primary tight" id="applyBtn" type="button" data-i18n="applyBtn">② 应用翻译</button>
+          <button class="soft tight" id="statsBtn" type="button" data-i18n="statsBtn">查看进度</button>
+        </div>
+      </article>
+
+      <article class="card panel">
+        <div class="kicker">Status</div>
+        <h2 data-i18n="statsTitle">进度与日志</h2>
+        <div class="stats" id="statChips">
+          <span class="stat" id="statTotal">—</span>
+          <span class="stat" id="statDone">—</span>
+          <span class="stat" id="statPending">—</span>
+          <span class="stat" id="statPercent">—</span>
+        </div>
+        <div class="terminal">
+          <div class="term-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span style="margin-left:8px">po_translator_desk.log</span>
+          </div>
+          <div class="term-body" id="log"></div>
+          <div class="progress on" id="progress"><div class="bar" id="bar"></div></div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
